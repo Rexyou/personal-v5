@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  a { text-decoration: none; }
+  ::selection { background: #FF640A; color: #fff; }
+}
+
+/* Scroll-reveal: hidden only once JS has armed the element,
+   so content is never stuck invisible if JS fails. */
+[data-anim].armed { opacity: 0; }
+[data-anim].armed.in { animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-anim], [data-load] { opacity: 1 !important; animation: none !important; }
+}
+
+/* iOS safe areas (notch / home indicator) */
+@supports (padding: max(0px)) {
+  .safe-x {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
+  .safe-b { padding-bottom: calc(1.75rem + env(safe-area-inset-bottom)); }
+}
