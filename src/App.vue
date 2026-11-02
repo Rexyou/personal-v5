@@ -26,7 +26,7 @@ const stats = [
 const contactLinks = [
   { href: 'https://wa.me/601116359489', label: 'WhatsApp · 011-1635 9489' },
   { href: 'https://www.linkedin.com/in/rex-you-2a4347194/', label: 'LinkedIn' },
-  { href: 'https://rexyou.github.io', label: 'GitHub' },
+  { href: 'https://github.com/Rexyou', label: 'GitHub' },
 ]
 </script>
 
